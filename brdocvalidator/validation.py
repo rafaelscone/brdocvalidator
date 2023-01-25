@@ -3,6 +3,7 @@ from itertools import cycle
 from datetime import datetime
 import bcrypt
 import re
+import jwt
 
 def check_email(email): 
     regex = '^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$' 
@@ -122,3 +123,18 @@ def comparePass(old_passwd, new_passwd):
     if bcrypt.checkpw(new_passwd, old_passwd):
         return True
     return False
+
+# generate jwt token
+def generate_jwt_token(secret_key: str,payload: dict ):
+    return jwt.encode(payload, secret_key, algorithm='HS256')
+def validate_jwt_token(secret_key: str,token:str,):
+    try:
+        payload = jwt.decode(token, secret_key, algorithms=['HS256'])
+        return True
+    except jwt.ExpiredSignatureError:
+        # Signature has expired
+        return False
+    except jwt.InvalidTokenError:
+        # Invalid token
+        return False
+# validate jwt token
