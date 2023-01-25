@@ -6,3 +6,5 @@ from brdocvalidator.validation import check_cpf
 from brdocvalidator.validation import check_birth_date
 from brdocvalidator.validation import encodePass
 from brdocvalidator.validation import comparePass
+from brdocvalidator.validation import generate_jwt_token
+from brdocvalidator.validation import validate_jwt_token
