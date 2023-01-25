@@ -7,7 +7,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '0.0.7'
+VERSION = '0.0.8'
 DESCRIPTION = 'Library to validate brazilians documents, email, birthDate and others'
 LONG_DESCRIPTION = 'Library to validate brazilians documents, email, birthDate and others'
 
@@ -21,7 +21,7 @@ setup(
     long_description_content_type="text/markdown",
     long_description=long_description,
     packages=find_packages(),
-    install_requires=['bcrypt'],
+    install_requires=['bcrypt==4.0.1', 'PyJWT==2.6.0'],
     keywords=['python', 'validation', 'cpf', 'cnpj'],
     classifiers=[
         "Development Status :: 1 - Planning",

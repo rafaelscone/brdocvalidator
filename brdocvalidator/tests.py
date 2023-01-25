@@ -1,18 +1,3 @@
-## About this package
-
-This package is available on https://pypi.org/project/brdocvalidator/ , you can easily validate brazilians documents like CPF and CNPJ. Also some functions to help validate email, birth date, and new functionalities will appear soo
-
-Code on github
-https://github.com/rafaelscone/brdocvalidator
-
-## How to use
-
-```bash
-pip3 install brdocvalidator
-```
-
-In your python file
-```py
 import brdocvalidator
 
 cpf = '111.111.111-11'
@@ -49,9 +34,3 @@ print(myemail)
 token = brdocvalidator.generate_jwt_token("secret",{"payload": "load"})
 validate_token = brdocvalidator.validate_jwt_token("other_secret",token)
 print(token, validate_token)
-```
-
-### Feel free to send me news, bugs and suggestions to this package
-Rafael Schneider - rafaelscone
-
-
